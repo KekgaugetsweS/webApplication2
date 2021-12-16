@@ -17,9 +17,15 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+        
+    - name: setup MSbuild
+      uses: microsoft/setup-msbuild@v1
+        
+      #restore nuget packages
+    - name: setup NuGet
+      uses: Nuget/setup-nuget@v1.0.2
+      
+    - name: Restore NuGet packages
+      run: nuget restore webApplication2.sln
+    - name: Build solution
+      run: msbuild  webApplication2.sln
