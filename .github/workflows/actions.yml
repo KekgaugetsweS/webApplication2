@@ -12,9 +12,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, macOS-latest]
 
     steps:
+    
+    - name: dotnet publish
+      run: dotnet publish
+    - name: set up cdk
+      run: rpm install
     
     - name: SSH Server Deploy
       uses: kostya-ten/ssh-server-deploy@v4
