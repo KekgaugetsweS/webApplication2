@@ -17,12 +17,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-        
-      #restore nuget packages
-    - name: setup NuGet
-      uses: Nuget/setup-nuget@v1.0.2
+    - name: Build--configuration Release
+      run: dotnet build --configuration Release
       
-    - name: Restore NuGet packages
-      run: nuget restore webApplication2.sln
-    - name: Build solution
-      run: msbuild  webApplication2.sln
+    - name: Run tests
+      run: dotnet test --configuration Release
+    
