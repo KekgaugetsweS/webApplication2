@@ -23,4 +23,20 @@ jobs:
       
     - name: Run tests
       run: dotnet test --configuration Release
+      
+    - name: deployment.com
+      uses: appleboy/ssh-action@master
+      with:
+        host: deployment.com
+        usernam: root
+        key: ${{ secrets.OMG_SECRETE }}
+        port: 22
+        script: |
+          cd webApplication2
+          git pull origin master
+          git status
+          
+
+    
+    
     
