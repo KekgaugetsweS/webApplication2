@@ -28,8 +28,6 @@ jobs:
       run: dotnet test --configuration Release
     - name: dotnet publish
       run: dotnet publish
-    - name: set up cdk
-      run: rpm install
       
     - name: deployment.com
       uses: appleboy/ssh-action@master
