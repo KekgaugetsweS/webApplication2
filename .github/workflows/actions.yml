@@ -19,7 +19,10 @@ jobs:
         dotnet-version: 5.0.x
     - name: Build--configuration Release
       run: dotnet build --configuration Release
+      working-directory: ./webApplication2.Applicationinsights
+      
       
     - name: Run tests
       run: dotnet test --configuration Release
+      working-directory: ./webApplication2.Applicationinsights
     
