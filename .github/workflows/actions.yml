@@ -27,7 +27,7 @@ jobs:
     - name: deployment.com
       uses: appleboy/ssh-action@master
       with:
-        host: deployment.com
+        host: 68.183.36.52
         username: root
         key: ${{ secrets.OMG_SECRETE }}
         port: 22
