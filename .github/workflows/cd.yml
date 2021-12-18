@@ -6,7 +6,7 @@ on:
     tags:
       - "*.*.*"
 env:
-   IMAGE_NAME: webapplication2
+   IMAGE_NAME: webApplication2
 
 jobs:
 
