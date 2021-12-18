@@ -15,6 +15,7 @@ env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: webApplication2
 
+
 jobs:
 
   test:
@@ -26,6 +27,14 @@ jobs:
     
     
     - name:  Run tests
-      run: docker build . --file Dockerfile
+      run: |
+          if [ -f docker-compose.test.yml ]; then
+            docker-compose --file docker-compose.test.yml build
+            docker-compose --file docker-compose.test.yml run sut
+          else
+            docker build . --file Dockerfile
+          fi
+      
+      
       
       
