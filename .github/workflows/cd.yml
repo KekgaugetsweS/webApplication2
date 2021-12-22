@@ -40,7 +40,7 @@ jobs:
       with:
         host: doosy-devops-test
         username: root
-        key: ${{ secrets.DOOSY_SECRETE }}
+        key: ${{ secrets.DOOSY_SECRET }}
         port: 22
         script: |
           docker pull kekgaugetswe/webapplications:latest
