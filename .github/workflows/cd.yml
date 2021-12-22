@@ -40,7 +40,7 @@ jobs:
       with:
         host: 68.183.36.52
         username: root
-        key: ${{ secrets.DOOSY_SECRET }}
+        key: ${{ secrets.DOOSY_PUBLIC_KEY }}
         port: 22
         script: |
           docker pull kekgaugetswe/webapplications:latest
