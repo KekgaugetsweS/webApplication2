@@ -38,7 +38,7 @@ jobs:
     - name: testing doosy-deploy ssh connection
       uses: appleboy/ssh-action@master
       with:
-        host: 68.183.36.52
+        host: '68.183.36.52'
         username: root
         key: ${{ secrets.DOOSY_PUBLIC_KEY }}
         port: 22
