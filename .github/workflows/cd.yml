@@ -38,11 +38,11 @@ jobs:
     - name: testing doosy-deploy ssh connection
       uses: appleboy/ssh-action@master
       with:
-        host: doosy-devops-test:
+        host: doosy-devops-test
         username: root
         key: ${{ secrets.DOOSY_SECRETE }}
         port: 22
-        script !
+        script: |
           docker pull kekgaugetswe/webapplications:latest
           docker create --name webapplications  -p 8083:80   kekgaugetswe/webapplications:latest
           docker ps -a
