@@ -46,4 +46,3 @@ jobs:
           docker pull kekgaugetswe/webapplications:latest
           docker create --name webapplications  -p 8083:80   kekgaugetswe/webapplications:latest
           docker ps -a
-          git status
