@@ -41,7 +41,7 @@ jobs:
               docker rm webapplications;
             fi
             # run your container
-            docker create --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
+            docker run --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
           fi
           docker ps -a
           
