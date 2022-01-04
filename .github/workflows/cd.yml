@@ -1,10 +1,6 @@
 name: Release to Docker Hub
 
 on:
-  push:
-    branches: [ master ]
-    tags:
-      - "*.*.*"
   workflow_dispatch:
     
 env:
