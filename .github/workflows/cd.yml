@@ -39,10 +39,10 @@ jobs:
         script: |
           if [ ! "$(docker ps -aq  -f name=webapplications)" ]; then
             if ["$(docker ps -aq -f status=exited -f name=kekgaugetswe/webapplications)" ]; then
-              docker rm webapplications
+              docker rm webapplications;
             fi
             # run your container
-            docker run -d --name  webapplications  kekgaugetswe/webapplications
+            docker create --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
           fi
           docker ps -a
           
