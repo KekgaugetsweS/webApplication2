@@ -1,9 +1,8 @@
 name: Release to Docker Hub
 
-on:
+on: 
+  repository_dispatch:
   push:
-    branches: master
-    tags:
       - "*.*.*"
 env:
    IMAGE_NAME: webApplication2
