@@ -5,13 +5,9 @@ on:
     
 env:
    IMAGE_NAME: webApplication2
-
 jobs:
-
   release:
-
     runs-on: ubuntu-latest
-
     steps:
     
     - name: Login to Docker hub
@@ -41,8 +37,12 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          docker pull kekgaugetswe/webapplications:latest
-          docker create --name webapplications  -p 8083:80   kekgaugetswe/webapplications:latest
-          docker ps -a
+          if [ ! "$(docker ps -aq  -f name=webapplications)" ]; then
+            if ["$(docker ps -aq -f status=exited -f name=kekgaugetswe/webapplications)" ];
+              docker rm webapplications
+            fi
+            # run your container
+            docker run -d --name  webapplications  kekgaugetswe/webapplications
+          fi
           
           
