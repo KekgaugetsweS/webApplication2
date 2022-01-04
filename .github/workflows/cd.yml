@@ -43,5 +43,6 @@ jobs:
             fi
             # run your container
             docker run -d --name  webapplications  kekgaugetswe/webapplications
+          fi
           
           
