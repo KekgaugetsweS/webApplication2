@@ -2,7 +2,8 @@ name: Release to Docker Hub
 
 on: 
   repository_dispatch:
-  push:
+    types: [build]
+    push:
       - "*.*.*"
 env:
    IMAGE_NAME: webApplication2
