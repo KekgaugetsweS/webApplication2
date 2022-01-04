@@ -1,11 +1,8 @@
 name: Release to Docker Hub
 
 on:
-  push:
-    branches: [ master ]    
-    tags:
-      - "*.*.*"
   workflow_dispatch:
+  
 
 env:
    IMAGE_NAME: webApplication2
