@@ -1,9 +1,12 @@
 name: Release to Docker Hub
 
-on: 
-  repository_dispatch:
-    push:
+on:
+  push:
+    branches: [ master ]    
+    tags:
       - "*.*.*"
+  workflow_dispatch:
+
 env:
    IMAGE_NAME: webApplication2
 
@@ -45,3 +48,5 @@ jobs:
           docker pull kekgaugetswe/webapplications:latest
           docker create --name webapplications  -p 8083:80   kekgaugetswe/webapplications:latest
           docker ps -a
+          
+          
