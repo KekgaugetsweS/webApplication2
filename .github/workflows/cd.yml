@@ -36,8 +36,9 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          if [  "$(docker ps -a -f status -f name=webapplications)" ]; then
-            docker kill webapplications; 
+          if [  "$(docker ps -a -f name=webapplications)" ]; then
+            docker kill webapplications;
+            d
             if ["$(docker ps -a -f status=exited -f name=webapplications)" ]; then
               docker rm webapplications;
             fi
