@@ -36,12 +36,12 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          if [  "$(docker ps -a  -f name=webapplications)" ]; then
+          if [  "$(docker ps -a -f name=webapplications)" ]; then
             docker kill webapplications;
-            #if ["$(docker ps -a -f status=exited -f name=webapplications)" ]; then
-             # docker rm webapplications;
-            #fi
-            # run your container
+            if ["$(docker ps -a -f status=exited -f name=webapplications)" ]; then
+              docker rm webapplications;
+            fi
+             run your container
             docker run --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
           fi
           docker ps -a
