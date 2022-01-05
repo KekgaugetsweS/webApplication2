@@ -39,11 +39,11 @@ jobs:
           if [  "$(docker ps  -a -f status=running  -f  name=webapplications)" ]; then
             docker kill webapplications;
             docker rm webapplications;
-            docker run --name webapplications  -p 5001:80 kekgaugetswe/webapplications:latest
+            docker run --name webapplications  -p 5002:80 kekgaugetswe/webapplications:latest
           else 
             docker rm webapplications;
             #run your container
-            docker run --name webapplications  -p 5001:80 kekgaugetswe/webapplications:latest
+            docker run --name webapplications  -p 5002:80 kekgaugetswe/webapplications:latest
           fi
           docker ps -a
           
