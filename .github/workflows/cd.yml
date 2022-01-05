@@ -40,10 +40,6 @@ jobs:
             docker kill webapplications;
             docker rm webapplications;
             docker run --name webapplications  -p 5002:80 kekgaugetswe/webapplications:latest
-          else 
-            docker rm webapplications;
-            #run your container
-            docker run --name webapplications  -p 5002:80 kekgaugetswe/webapplications:latest
           fi
           docker ps -a
           
