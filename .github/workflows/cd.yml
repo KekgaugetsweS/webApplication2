@@ -38,18 +38,12 @@ jobs:
         script: |
           if [  "$(docker ps  -a -f status=running  -f  name=webapplications)" ]; then
             docker kill webapplications;
-            
-            if ["$(docker ps -a -f status=exited -f name=webapplications)" ]; then
-              docker rm webapplications;
-            fi
-             #run your container
-             docker run --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
-          
+            docker rm webapplications;
+            docker run --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
           else 
             docker rm webapplications;
             #run your container
             docker run --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
-          
           fi
           docker ps -a
           
