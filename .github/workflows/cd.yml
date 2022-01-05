@@ -46,7 +46,7 @@ jobs:
              docker run --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
           
           else 
-              docker rm webapplications;
+            docker rm webapplications;
             #run your container
             docker run --name webapplications  -p 8083:80 kekgaugetswe/webapplications:latest
           
